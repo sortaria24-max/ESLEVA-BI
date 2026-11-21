@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+# Credenciales y configuración local
+.env
+*.env
+# Sistema
+.DS_Store
+Thumbs.db
+# Ficheros temporales de Office
+~$*
