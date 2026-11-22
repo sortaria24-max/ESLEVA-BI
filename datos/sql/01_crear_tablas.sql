@@ -2,7 +2,10 @@
 -- ERP de Estampaciones Levante S.A. (ESLEVA) - Creación de tablas
 -- Generado automáticamente por generador/generar_datos_ESLEVA.py
 -- Puede ejecutarse varias veces: elimina antes las tablas si ya existen.
+-- Se ejecuta en una única transacción: si falla, no se borra ni se crea nada.
 -- ============================================================================
+
+BEGIN;
 
 DROP TABLE IF EXISTS compras, lineas_pedido, pedidos_venta, ordenes_fabricacion,
     productos, materias_primas, proveedores, maquinas, familias, clientes CASCADE;
@@ -100,3 +103,5 @@ CREATE TABLE compras (
     precio_kg        NUMERIC(8,4) NOT NULL,
     importe          NUMERIC(14,2) NOT NULL
 );
+
+COMMIT;
