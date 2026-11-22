@@ -40,11 +40,24 @@ Si no fuera posible acceder a la base de datos en la nube, puede recrearse en cu
 
 ## Regenerar los datos
 
-*Pendiente.* Instrucciones para ejecutar `generador/generar_datos_ESLEVA.py`.
+Todos los ficheros de `datos/` se generan con el script `generador/generar_datos_ESLEVA.py`. Usa una semilla fija, de modo que cada ejecución produce exactamente los mismos datos. Desde la carpeta raíz del repositorio:
+
+```bash
+pip install -r generador/requirements.txt
+python generador/generar_datos_ESLEVA.py
+```
+
+El script sobrescribe los ficheros de `datos/sql/`, `datos/excel/` y `datos/mes/` y muestra al final un resumen con el número de filas generadas.
+
+### Particularidades de las fuentes
+
+- Los CSV del MES usan el punto y coma (`;`) como separador y contienen algunos registros duplicados.
+- El Excel de presupuesto tiene un título en la primera fila y filas de `TOTAL` que deben eliminarse en la transformación.
+- El Excel de calidad contiene fechas en formatos mixtos, variantes en los nombres, celdas vacías y duplicados, como ocurre con los registros manuales reales.
 
 ## Estado del proyecto
 
 - [x] Diseño del escenario, de las fuentes y del modelo de datos
-- [ ] Generación de los datos
+- [x] Generación de los datos
 - [ ] Carga de la base de datos en Supabase
 - [ ] Proyecto de Power BI: ETL, modelo, DAX e informes
