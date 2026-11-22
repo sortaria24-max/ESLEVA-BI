@@ -34,7 +34,19 @@ Periodo de los datos: enero de 2024 a octubre de 2026.
 
 ## Acceso a la base de datos
 
-*Pendiente.* Aquí se indicarán el servidor, la base de datos y las credenciales de solo lectura.
+La base de datos del ERP está alojada en Supabase (PostgreSQL) y puede consultarse con un usuario de **solo lectura**:
+
+| Parámetro | Valor |
+|---|---|
+| Servidor | `aws-1-eu-west-1.pooler.supabase.com` |
+| Puerto | `5432` |
+| Base de datos | `postgres` |
+| Usuario | `lector_esleva.fcpxbuhuzvqyjrlwejgv` |
+| Contraseña | `09MBID_lector` |
+
+En Power BI Desktop: **Obtener datos > Base de datos PostgreSQL**, servidor `aws-1-eu-west-1.pooler.supabase.com:5432`, base de datos `postgres`, modo **Importar**; en la ventana de credenciales, elige **Base de datos** e introduce el usuario y la contraseña anteriores. Las tablas están en el esquema `public`.
+
+Este usuario solo puede leer las tablas, no modificarlas. El plan gratuito de Supabase pausa los proyectos tras un periodo de inactividad; si la conexión falla por ese motivo, puede solicitarse su reactivación o recrear la base de datos en local.
 
 Si no fuera posible acceder a la base de datos en la nube, puede recrearse en cualquier instancia de PostgreSQL siguiendo la guía paso a paso [Cómo recrear la base de datos](docs/recrear_base_de_datos.md).
 
@@ -59,5 +71,5 @@ El script sobrescribe los ficheros de `datos/sql/`, `datos/excel/` y `datos/mes/
 
 - [x] Diseño del escenario, de las fuentes y del modelo de datos
 - [x] Generación de los datos
-- [ ] Carga de la base de datos en Supabase
+- [x] Carga de la base de datos en Supabase
 - [ ] Proyecto de Power BI: ETL, modelo, DAX e informes
