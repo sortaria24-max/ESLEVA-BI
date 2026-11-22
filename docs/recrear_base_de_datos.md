@@ -86,10 +86,10 @@ Datos de conexión resultantes:
 4. Pega el contenido de `datos/sql/01_crear_tablas.sql` en el editor y pulsa **Run**. Supabase avisará de que la consulta contiene operaciones destructivas (los `DROP TABLE IF EXISTS` iniciales) y de que las tablas no tienen activada la seguridad a nivel de fila (RLS). Elige **Run and enable RLS**.
 5. Para la carga de datos, el script `02_cargar_datos.sql` es demasiado grande para el editor web. Tienes dos alternativas:
    - **Sin instalar nada:** la carpeta `datos/sql/carga_por_partes/` contiene la misma carga dividida en 7 ficheros (`parte_01_de_07.sql` … `parte_07_de_07.sql`). Abre cada uno en GitHub con el botón **Raw**, copia todo su contenido, pégalo en una consulta nueva del **SQL Editor** y pulsa **Run**. Ejecútalos **en orden numérico**, porque las primeras partes cargan las tablas de las que dependen las siguientes. Si una parte falla, no se carga nada de ella: corrige el problema y vuelve a ejecutar esa misma parte.
-   - **Con `psql`** (necesitas tener PostgreSQL instalado, opción A.1): en Supabase, pulsa **Connect** (parte superior), abre la pestaña **Direct**, elige **Session pooler** y consulta el servidor (`host`) y el usuario (`user`) de tu proyecto. Desde la carpeta raíz del repositorio, ejecuta el comando sustituyendo el servidor y el usuario por los tuyos. `psql` te pedirá la contraseña del proyecto al ejecutarlo; así no queda escrita en el historial del terminal y no da problemas si contiene caracteres especiales:
+   - **Con `psql`** (necesitas tener PostgreSQL instalado, opción A.1): en Supabase, pulsa **Connect** (parte superior), abre la pestaña **Direct** y, como método de conexión, elige **Session pooler** (no *Direct connection*). Copia el servidor (`host`, con el formato `aws-N-<región>.pooler.supabase.com`) y el usuario (`user`, con el formato `postgres.<ref>`). Desde la carpeta raíz del repositorio, ejecuta el comando sustituyendo `<host_del_pooler>` por el `host` completo y `<ref>` por el identificador de tu proyecto. `psql` te pedirá la contraseña del proyecto al ejecutarlo; así no queda escrita en el historial del terminal y no da problemas si contiene caracteres especiales:
 
    ```bash
-   psql -h <servidor>.pooler.supabase.com -p 5432 -U postgres.<ref> -d postgres -f datos/sql/02_cargar_datos.sql
+   psql -h <host_del_pooler> -p 5432 -U postgres.<ref> -d postgres -f datos/sql/02_cargar_datos.sql
    ```
 
 6. *(Opcional)* Si quieres dar acceso a otra persona sin compartir tu contraseña de administrador, crea un usuario de solo lectura. En el **SQL Editor**, sustituye `<contraseña>` por una contraseña nueva y ejecuta:
@@ -114,11 +114,11 @@ Datos de conexión resultantes:
 
 Usa siempre los datos del **Session pooler**: la conexión directa de Supabase solo funciona con IPv6 y muchas redes domésticas no la admiten.
 
-Datos de conexión resultantes (los encontrarás en **Connect > Direct > Session pooler**):
+Datos de conexión resultantes (los encontrarás en **Connect > Direct**, con el método **Session pooler** seleccionado):
 
 | Parámetro | Valor |
 |---|---|
-| Servidor | `<servidor>.pooler.supabase.com` |
+| Servidor | el `host` completo del Session pooler (`aws-N-<región>.pooler.supabase.com`) |
 | Puerto | `5432` |
 | Base de datos | `postgres` |
 | Usuario | `postgres.<ref>` |
@@ -190,7 +190,7 @@ Compara el resultado con los recuentos de referencia:
 ## Conectar Power BI a la base de datos recreada
 
 1. En Power BI Desktop: **Inicio > Obtener datos > Más… > Base de datos > Base de datos PostgreSQL**.
-2. **Servidor:** el de la tabla de tu opción, con el puerto si no es el 5432 (por ejemplo, `localhost` o `<servidor>.pooler.supabase.com:5432`).
+2. **Servidor:** el de la tabla de tu opción, con el puerto si no es el 5432 (por ejemplo, `localhost` o `<host_del_pooler>:5432`).
 3. **Base de datos:** `esleva` (opciones A y C) o `postgres` (opción B).
 4. Modo de conectividad: **Importar**.
 5. En la ventana de credenciales, elige **Base de datos** e introduce el usuario y la contraseña de la opción que hayas seguido.
