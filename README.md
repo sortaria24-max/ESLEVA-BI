@@ -18,7 +18,7 @@ ESLEVA-BI/
 │   ├── excel/      Ficheros departamentales: calidad y presupuesto
 │   └── mes/        Ficheros CSV mensuales del sistema de captura de planta (MES)
 ├── powerbi/        Proyecto de Power BI y script de Python para el cálculo del OEE
-└── docs/figuras/   Diagramas de arquitectura y del modelo de datos
+└── docs/           Guía para recrear la base de datos y figuras del diseño
 ```
 
 ## Fuentes de datos
@@ -34,7 +34,9 @@ Periodo de los datos: enero de 2024 a octubre de 2026.
 
 ## Acceso a la base de datos
 
-*Pendiente.* Aquí se indicarán el servidor, la base de datos y las credenciales de solo lectura. Si no fuera posible acceder a la base de datos en la nube, puede recrearse en cualquier instancia de PostgreSQL ejecutando en orden los scripts de `datos/sql/`.
+*Pendiente.* Aquí se indicarán el servidor, la base de datos y las credenciales de solo lectura.
+
+Si no fuera posible acceder a la base de datos en la nube, puede recrearse en cualquier instancia de PostgreSQL siguiendo la guía paso a paso [Cómo recrear la base de datos](docs/recrear_base_de_datos.md).
 
 ## Regenerar los datos
 
