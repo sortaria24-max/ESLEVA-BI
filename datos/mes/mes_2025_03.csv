@@ -1,0 +1,318 @@
+fecha;turno;maquina;cadencia_teorica;tiempo_planificado_min;tiempo_parada_min;causa_parada;tipo_parada;piezas_fabricadas;piezas_conformes
+2025-03-03;Mañana;PR-01;530;480;36;Cambio de formato;Planificada;3882;3839
+2025-03-03;Tarde;PR-01;530;480;21;Cambio de formato;Planificada;4013;3974
+2025-03-03;Noche;PR-01;530;480;42;Cambio de formato;Planificada;3830;3788
+2025-03-03;Mañana;PR-02;360;480;55;Cambio de formato;Planificada;1387;1379
+2025-03-03;Tarde;PR-02;360;480;29;Cambio de formato;Planificada;1633;1614
+2025-03-03;Noche;PR-02;360;480;39;Cambio de formato;Planificada;1452;1438
+2025-03-03;Mañana;PR-03;580;480;35;Cambio de formato;Planificada;2101;2070
+2025-03-03;Tarde;PR-03;580;480;56;Cambio de formato;Planificada;2141;2112
+2025-03-03;Noche;PR-03;580;480;67;Mantenimiento preventivo;Planificada;1816;1796
+2025-03-03;Mañana;SL-01;40;480;41;Cambio de formato;Planificada;289;284
+2025-03-03;Tarde;SL-01;40;480;0;Sin parada;;316;314
+2025-03-03;Noche;SL-01;40;480;43;Cambio de formato;Planificada;288;287
+2025-03-03;Mañana;SL-02;80;480;37;Cambio de formato;Planificada;584;580
+2025-03-03;Tarde;SL-02;80;480;19;Ajustes de calidad;No planificada;608;604
+2025-03-03;Noche;SL-02;80;480;49;Cambio de formato;Planificada;568;564
+2025-03-04;Mañana;PR-01;530;480;51;Cambio de formato;Planificada;3751;3711
+2025-03-04;Tarde;PR-01;530;480;0;Sin parada;;4197;4150
+2025-03-04;Noche;PR-01;530;480;0;Sin parada;;4197;4155
+2025-03-04;Mañana;PR-02;360;480;45;Cambio de formato;Planificada;1403;1392
+2025-03-04;Tarde;PR-02;360;480;0;Sin parada;;1688;1667
+2025-03-04;Noche;PR-02;360;480;57;Cambio de formato;Planificada;1443;1430
+2025-03-04;Mañana;PR-03;580;480;28;Cambio de formato;Planificada;2143;2114
+2025-03-04;Tarde;PR-03;580;480;149;Avería;No planificada;1714;1688
+2025-03-04;Noche;PR-03;580;480;24;Cambio de formato;Planificada;2216;2196
+2025-03-04;Mañana;SL-01;40;480;28;Cambio de formato;Planificada;298;297
+2025-03-04;Tarde;SL-01;40;480;26;Cambio de formato;Planificada;299;296
+2025-03-04;Noche;SL-01;40;480;29;Ajustes de calidad;No planificada;297;293
+2025-03-04;Mañana;SL-02;80;480;44;Cambio de formato;Planificada;575;570
+2025-03-04;Tarde;SL-02;80;480;30;Cambio de formato;Planificada;594;587
+2025-03-04;Noche;SL-02;80;480;0;Sin parada;;633;628
+2025-03-05;Mañana;PR-01;530;480;0;Sin parada;;4197;4166
+2025-03-05;Tarde;PR-01;530;480;92;Mantenimiento preventivo;Planificada;3393;3364
+2025-03-05;Noche;PR-01;530;480;0;Sin parada;;4197;4159
+2025-03-05;Mañana;PR-02;360;480;0;Sin parada;;1714;1693
+2025-03-05;Tarde;PR-02;360;480;11;Ajustes de calidad;No planificada;1571;1550
+2025-03-05;Noche;PR-02;360;480;24;Cambio de formato;Planificada;1602;1588
+2025-03-05;Mañana;PR-03;580;480;77;Avería;No planificada;1982;1952
+2025-03-05;Tarde;PR-03;580;480;139;Avería;No planificada;1564;1541
+2025-03-05;Noche;PR-03;580;480;97;Mantenimiento preventivo;Planificada;1892;1865
+2025-03-05;Mañana;SL-01;40;480;0;Sin parada;;316;316
+2025-03-05;Tarde;SL-01;40;480;0;Sin parada;;316;312
+2025-03-05;Noche;SL-01;40;480;0;Sin parada;;316;316
+2025-03-05;Mañana;SL-02;80;480;20;Cambio de formato;Planificada;607;602
+2025-03-05;Tarde;SL-02;80;480;30;Cambio de formato;Planificada;594;585
+2025-03-05;Noche;SL-02;80;480;0;Sin parada;;633;631
+2025-03-06;Mañana;PR-01;530;480;111;Mantenimiento preventivo;Planificada;3226;3181
+2025-03-06;Tarde;PR-01;530;480;45;Cambio de formato;Planificada;3804;3761
+2025-03-06;Noche;PR-01;530;480;36;Cambio de formato;Planificada;3882;3841
+2025-03-06;Mañana;PR-02;360;480;41;Avería;No planificada;1503;1482
+2025-03-06;Tarde;PR-02;360;480;0;Sin parada;;1668;1650
+2025-03-06;Noche;PR-02;360;480;0;Sin parada;;1521;1503
+2025-03-06;Mañana;PR-03;580;480;53;Cambio de formato;Planificada;2089;2060
+2025-03-06;Tarde;PR-03;580;480;137;Avería;No planificada;1710;1678
+2025-03-06;Noche;PR-03;580;480;0;Sin parada;;2228;2204
+2025-03-06;Mañana;SL-01;40;480;21;Cambio de formato;Planificada;302;299
+2025-03-06;Tarde;SL-01;40;480;0;Sin parada;;316;311
+2025-03-06;Noche;SL-01;40;480;0;Sin parada;;316;313
+2025-03-06;Mañana;SL-02;80;480;14;Ajustes de calidad;No planificada;615;607
+2025-03-06;Tarde;SL-02;80;480;26;Cambio de formato;Planificada;599;593
+2025-03-06;Noche;SL-02;80;480;48;Cambio de formato;Planificada;570;556
+2025-03-07;Mañana;PR-01;530;480;84;Avería;No planificada;3463;3429
+2025-03-07;Tarde;PR-01;530;480;42;Cambio de formato;Planificada;3830;3800
+2025-03-07;Noche;PR-01;530;480;0;Sin parada;;4197;4166
+2025-03-07;Mañana;PR-02;360;480;0;Sin parada;;1543;1527
+2025-03-07;Tarde;PR-02;360;480;0;Sin parada;;1632;1612
+2025-03-07;Noche;PR-02;360;480;44;Cambio de formato;Planificada;1535;1519
+2025-03-07;Mañana;PR-03;580;480;43;Cambio de formato;Planificada;2135;2102
+2025-03-07;Tarde;PR-03;580;480;24;Cambio de formato;Planificada;2265;2236
+2025-03-07;Noche;PR-03;580;480;0;Sin parada;;2276;2251
+2025-03-07;Mañana;SL-01;40;480;81;Falta de material;No planificada;263;261
+2025-03-07;Tarde;SL-01;40;480;23;Cambio de formato;Planificada;301;300
+2025-03-07;Noche;SL-01;40;480;26;Cambio de formato;Planificada;299;299
+2025-03-07;Mañana;SL-02;80;480;36;Cambio de formato;Planificada;586;582
+2025-03-07;Tarde;SL-02;80;480;44;Cambio de formato;Planificada;575;568
+2025-03-07;Noche;SL-02;80;480;34;Falta de material;No planificada;588;580
+2025-03-10;Mañana;PR-01;530;480;30;Cambio de formato;Planificada;3935;3903
+2025-03-10;Tarde;PR-01;530;480;0;Sin parada;;4197;4169
+2025-03-10;Noche;PR-01;530;480;0;Sin parada;;4197;4161
+2025-03-10;Mañana;PR-02;360;480;117;Mantenimiento preventivo;Planificada;1668;1646
+2025-03-10;Tarde;PR-02;360;480;0;Sin parada;;2167;2138
+2025-03-10;Noche;PR-02;360;480;39;Cambio de formato;Planificada;1824;1800
+2025-03-10;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-10;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-10;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-10;Mañana;SL-01;40;480;27;Cambio de formato;Planificada;298;296
+2025-03-10;Tarde;SL-01;40;480;94;Mantenimiento preventivo;Planificada;253;250
+2025-03-10;Noche;SL-01;40;480;0;Sin parada;;308;304
+2025-03-10;Mañana;SL-02;80;480;0;Sin parada;;633;628
+2025-03-10;Tarde;SL-02;80;480;20;Cambio de formato;Planificada;607;603
+2025-03-10;Noche;SL-02;80;480;0;Sin parada;;633;627
+2025-03-11;Mañana;PR-01;530;480;37;Cambio de formato;Planificada;3874;3837
+2025-03-11;Tarde;PR-01;530;480;26;Cambio de formato;Planificada;3970;3938
+2025-03-11;Noche;PR-01;530;480;0;Sin parada;;4197;4168
+2025-03-11;Mañana;PR-02;360;480;0;Sin parada;;2156;2134
+2025-03-11;Tarde;PR-02;360;480;26;Cambio de formato;Planificada;1838;1812
+2025-03-11;Noche;PR-02;360;480;25;Cambio de formato;Planificada;1949;1928
+2025-03-11;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-11;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-11;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-11;Mañana;SL-01;40;480;0;Sin parada;;316;314
+2025-03-11;Tarde;SL-01;40;480;25;Cambio de formato;Planificada;285;283
+2025-03-11;Noche;SL-01;40;480;0;Sin parada;;291;290
+2025-03-11;Mañana;SL-02;80;480;34;Cambio de formato;Planificada;588;584
+2025-03-11;Tarde;SL-02;80;480;27;Cambio de formato;Planificada;597;594
+2025-03-11;Noche;SL-02;80;480;60;Cambio de formato;Planificada;554;545
+2025-03-12;Mañana;PR-01;530;480;63;Mantenimiento preventivo;Planificada;3646;3606
+2025-03-12;Tarde;PR-01;530;480;67;Mantenimiento preventivo;Planificada;3611;3582
+2025-03-12;Noche;PR-01;530;480;0;Sin parada;;4197;4162
+2025-03-12;Mañana;PR-02;360;480;0;Sin parada;;2131;2109
+2025-03-12;Tarde;PR-02;360;480;33;Cambio de formato;Planificada;1825;1795
+2025-03-12;Noche;PR-02;360;480;50;Falta de material;No planificada;1780;1761
+2025-03-12;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-12;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-12;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-12;Mañana;SL-01;40;480;0;Sin parada;;308;307
+2025-03-12;Tarde;SL-01;40;480;31;Cambio de formato;Planificada;279;273
+2025-03-12;Noche;SL-01;40;480;28;Cambio de formato;Planificada;287;282
+2025-03-12;Mañana;SL-02;80;480;25;Cambio de formato;Planificada;600;590
+2025-03-12;Tarde;SL-02;80;480;96;Mantenimiento preventivo;Planificada;506;504
+2025-03-12;Noche;SL-02;80;480;0;Sin parada;;633;626
+2025-03-13;Mañana;PR-01;530;480;22;Cambio de formato;Planificada;4005;3969
+2025-03-13;Tarde;PR-01;530;480;25;Cambio de formato;Planificada;3978;3937
+2025-03-13;Noche;PR-01;530;480;160;Avería;No planificada;2798;2768
+2025-03-13;Mañana;PR-02;360;480;0;Sin parada;;1973;1954
+2025-03-13;Tarde;PR-02;360;480;154;Avería;No planificada;1341;1326
+2025-03-13;Noche;PR-02;360;480;0;Sin parada;;2078;2056
+2025-03-13;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-13;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-13;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-13;Mañana;SL-01;40;480;71;Avería;No planificada;264;264
+2025-03-13;Tarde;SL-01;40;480;0;Sin parada;;306;302
+2025-03-13;Noche;SL-01;40;480;26;Cambio de formato;Planificada;298;298
+2025-03-13;Mañana;SL-02;80;480;23;Cambio de formato;Planificada;603;600
+2025-03-13;Tarde;SL-02;80;480;0;Sin parada;;633;628
+2025-03-13;Noche;SL-02;80;480;28;Ajustes de calidad;No planificada;596;589
+2025-03-14;Mañana;PR-01;530;480;54;Cambio de formato;Planificada;3725;3690
+2025-03-14;Tarde;PR-01;530;480;24;Cambio de formato;Planificada;3987;3939
+2025-03-14;Noche;PR-01;530;480;56;Cambio de formato;Planificada;3707;3677
+2025-03-14;Mañana;PR-02;360;480;43;Cambio de formato;Planificada;1978;1958
+2025-03-14;Tarde;PR-02;360;480;0;Sin parada;;2126;2103
+2025-03-14;Noche;PR-02;360;480;37;Falta de material;No planificada;1866;1847
+2025-03-14;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-14;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-14;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-14;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-14;Mañana;SL-01;40;480;0;Sin parada;;305;303
+2025-03-14;Tarde;SL-01;40;480;0;Sin parada;;311;307
+2025-03-14;Noche;SL-01;40;480;22;Cambio de formato;Planificada;302;301
+2025-03-14;Mañana;SL-02;80;480;67;Avería;No planificada;545;538
+2025-03-14;Tarde;SL-02;80;480;34;Cambio de formato;Planificada;588;582
+2025-03-14;Noche;SL-02;80;480;22;Cambio de formato;Planificada;604;601
+2025-03-17;Mañana;PR-01;530;480;0;Sin parada;;1810;1797
+2025-03-17;Tarde;PR-01;530;480;22;Ajustes de calidad;No planificada;1644;1629
+2025-03-17;Noche;PR-01;530;480;34;Cambio de formato;Planificada;1534;1519
+2025-03-17;Mañana;PR-02;360;480;49;Cambio de formato;Planificada;985;971
+2025-03-17;Tarde;PR-02;360;480;0;Sin parada;;1114;1096
+2025-03-17;Noche;PR-02;360;480;40;Cambio de formato;Planificada;884;872
+2025-03-17;Noche;PR-02;360;480;40;Cambio de formato;Planificada;884;872
+2025-03-17;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-17;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-17;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-17;Mañana;SL-01;40;480;58;Cambio de formato;Planificada;170;167
+2025-03-17;Tarde;SL-01;40;480;22;Cambio de formato;Planificada;185;183
+2025-03-17;Noche;SL-01;40;480;56;Cambio de formato;Planificada;165;164
+2025-03-17;Mañana;SL-02;80;480;43;Cambio de formato;Planificada;436;431
+2025-03-17;Tarde;SL-02;80;480;55;Falta de material;No planificada;422;420
+2025-03-17;Noche;SL-02;80;480;69;Falta de material;No planificada;411;409
+2025-03-18;Mañana;PR-01;530;480;40;Cambio de formato;Planificada;1585;1571
+2025-03-18;Tarde;PR-01;530;480;40;Cambio de formato;Planificada;1671;1654
+2025-03-18;Noche;PR-01;530;480;0;Sin parada;;1722;1707
+2025-03-18;Mañana;PR-02;360;480;90;Mantenimiento preventivo;Planificada;798;784
+2025-03-18;Tarde;PR-02;360;480;21;Ajustes de calidad;No planificada;985;973
+2025-03-18;Noche;PR-02;360;480;0;Sin parada;;1052;1039
+2025-03-18;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-18;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-18;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-18;Mañana;SL-01;40;480;0;Sin parada;;181;180
+2025-03-18;Tarde;SL-01;40;480;0;Sin parada;;175;171
+2025-03-18;Noche;SL-01;40;480;34;Ajustes de calidad;No planificada;168;166
+2025-03-18;Mañana;SL-02;80;480;0;Sin parada;;516;511
+2025-03-18;Tarde;SL-02;80;480;83;Avería;No planificada;406;404
+2025-03-18;Noche;SL-02;80;480;24;Cambio de formato;Planificada;487;484
+2025-03-19;Mañana;PR-01;530;480;41;Cambio de formato;Planificada;1599;1584
+2025-03-19;Tarde;PR-01;530;480;0;Sin parada;;1707;1697
+2025-03-19;Noche;PR-01;530;480;60;Mantenimiento preventivo;Planificada;1475;1467
+2025-03-19;Mañana;PR-02;360;480;18;Ajustes de calidad;No planificada;992;982
+2025-03-19;Tarde;PR-02;360;480;65;Avería;No planificada;950;936
+2025-03-19;Noche;PR-02;360;480;10;Ajustes de calidad;No planificada;995;982
+2025-03-19;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-19;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-19;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-19;Mañana;SL-01;40;480;0;Sin parada;;193;190
+2025-03-19;Tarde;SL-01;40;480;30;Cambio de formato;Planificada;183;182
+2025-03-19;Noche;SL-01;40;480;34;Cambio de formato;Planificada;169;167
+2025-03-19;Mañana;SL-02;80;480;0;Sin parada;;521;517
+2025-03-19;Tarde;SL-02;80;480;0;Sin parada;;496;489
+2025-03-19;Noche;SL-02;80;480;99;Avería;No planificada;376;369
+2025-03-20;Mañana;PR-01;530;480;27;Cambio de formato;Planificada;1581;1568
+2025-03-20;Tarde;PR-01;530;480;34;Cambio de formato;Planificada;1495;1478
+2025-03-20;Noche;PR-01;530;480;52;Cambio de formato;Planificada;1565;1548
+2025-03-20;Mañana;PR-02;360;480;0;Sin parada;;982;966
+2025-03-20;Tarde;PR-02;360;480;38;Cambio de formato;Planificada;994;986
+2025-03-20;Noche;PR-02;360;480;0;Sin parada;;996;982
+2025-03-20;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-20;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-20;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-20;Mañana;SL-01;40;480;0;Sin parada;;183;183
+2025-03-20;Tarde;SL-01;40;480;57;Falta de material;No planificada;162;162
+2025-03-20;Noche;SL-01;40;480;47;Falta de material;No planificada;168;165
+2025-03-20;Mañana;SL-02;80;480;0;Sin parada;;523;521
+2025-03-20;Tarde;SL-02;80;480;44;Cambio de formato;Planificada;476;468
+2025-03-20;Noche;SL-02;80;480;159;Avería;No planificada;320;317
+2025-03-21;Mañana;PR-01;530;480;41;Cambio de formato;Planificada;1496;1481
+2025-03-21;Tarde;PR-01;530;480;33;Cambio de formato;Planificada;1663;1649
+2025-03-21;Noche;PR-01;530;480;23;Cambio de formato;Planificada;1529;1511
+2025-03-21;Mañana;PR-02;360;480;49;Cambio de formato;Planificada;949;933
+2025-03-21;Tarde;PR-02;360;480;37;Ajustes de calidad;No planificada;951;941
+2025-03-21;Noche;PR-02;360;480;0;Sin parada;;1017;999
+2025-03-21;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-21;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-21;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-21;Mañana;SL-01;40;480;0;Sin parada;;195;194
+2025-03-21;Tarde;SL-01;40;480;0;Sin parada;;199;196
+2025-03-21;Noche;SL-01;40;480;68;Mantenimiento preventivo;Planificada;164;162
+2025-03-21;Mañana;SL-02;80;480;28;Ajustes de calidad;No planificada;457;453
+2025-03-21;Tarde;SL-02;80;480;22;Cambio de formato;Planificada;498;493
+2025-03-21;Noche;SL-02;80;480;0;Sin parada;;525;521
+2025-03-24;Mañana;PR-01;530;480;96;Mantenimiento preventivo;Planificada;3358;3324
+2025-03-24;Tarde;PR-01;530;480;46;Cambio de formato;Planificada;3795;3760
+2025-03-24;Noche;PR-01;530;480;0;Sin parada;;4197;4154
+2025-03-24;Mañana;PR-02;360;480;79;Mantenimiento preventivo;Planificada;2381;2358
+2025-03-24;Tarde;PR-02;360;480;0;Sin parada;;2851;2824
+2025-03-24;Noche;PR-02;360;480;108;Avería;No planificada;2209;2178
+2025-03-24;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-24;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-24;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-24;Mañana;SL-01;40;480;0;Sin parada;;316;313
+2025-03-24;Tarde;SL-01;40;480;0;Sin parada;;316;313
+2025-03-24;Noche;SL-01;40;480;0;Sin parada;;316;315
+2025-03-24;Mañana;SL-02;80;480;34;Cambio de formato;Planificada;588;578
+2025-03-24;Tarde;SL-02;80;480;34;Cambio de formato;Planificada;588;583
+2025-03-24;Noche;SL-02;80;480;30;Ajustes de calidad;No planificada;594;588
+2025-03-25;Mañana;PR-01;530;480;0;Sin parada;;4197;4164
+2025-03-25;Tarde;PR-01;530;480;100;Avería;No planificada;3323;3293
+2025-03-25;Noche;PR-01;530;480;20;Cambio de formato;Planificada;4022;3986
+2025-03-25;Mañana;PR-02;360;480;0;Sin parada;;2851;2815
+2025-03-25;Tarde;PR-02;360;480;57;Cambio de formato;Planificada;2512;2482
+2025-03-25;Noche;PR-02;360;480;91;Avería;No planificada;2310;2279
+2025-03-25;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-25;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-25;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-25;Mañana;SL-01;40;480;66;Mantenimiento preventivo;Planificada;273;271
+2025-03-25;Tarde;SL-01;40;480;25;Cambio de formato;Planificada;300;300
+2025-03-25;Noche;SL-01;40;480;51;Cambio de formato;Planificada;283;279
+2025-03-25;Mañana;SL-02;80;480;0;Sin parada;;633;627
+2025-03-25;Tarde;SL-02;80;480;0;Sin parada;;633;625
+2025-03-25;Noche;SL-02;80;480;55;Cambio de formato;Planificada;561;557
+2025-03-26;Mañana;PR-01;530;480;0;Sin parada;;4197;4146
+2025-03-26;Tarde;PR-01;530;480;0;Sin parada;;4197;4160
+2025-03-26;Noche;PR-01;530;480;17;Ajustes de calidad;No planificada;4048;4019
+2025-03-26;Mañana;PR-02;360;480;39;Ajustes de calidad;No planificada;2619;2575
+2025-03-26;Tarde;PR-02;360;480;0;Sin parada;;2851;2817
+2025-03-26;Noche;PR-02;360;480;0;Sin parada;;2851;2820
+2025-03-26;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-26;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-26;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-26;Mañana;SL-01;40;480;47;Cambio de formato;Planificada;285;282
+2025-03-26;Tarde;SL-01;40;480;42;Cambio de formato;Planificada;289;288
+2025-03-26;Noche;SL-01;40;480;49;Cambio de formato;Planificada;284;282
+2025-03-26;Mañana;SL-02;80;480;24;Ajustes de calidad;No planificada;601;595
+2025-03-26;Tarde;SL-02;80;480;21;Cambio de formato;Planificada;605;603
+2025-03-26;Noche;SL-02;80;480;24;Cambio de formato;Planificada;601;597
+2025-03-27;Mañana;PR-01;530;480;41;Cambio de formato;Planificada;3839;3806
+2025-03-27;Tarde;PR-01;530;480;20;Ajustes de calidad;No planificada;4022;3988
+2025-03-27;Noche;PR-01;530;480;16;Ajustes de calidad;No planificada;4057;4018
+2025-03-27;Mañana;PR-02;360;480;0;Sin parada;;2851;2810
+2025-03-27;Tarde;PR-02;360;480;0;Sin parada;;2851;2818
+2025-03-27;Noche;PR-02;360;480;0;Sin parada;;2851;2818
+2025-03-27;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-27;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-27;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-27;Mañana;SL-01;40;480;0;Sin parada;;316;314
+2025-03-27;Tarde;SL-01;40;480;51;Cambio de formato;Planificada;283;283
+2025-03-27;Noche;SL-01;40;480;0;Sin parada;;316;314
+2025-03-27;Mañana;SL-02;80;480;55;Cambio de formato;Planificada;561;557
+2025-03-27;Tarde;SL-02;80;480;83;Falta de material;No planificada;524;517
+2025-03-27;Noche;SL-02;80;480;59;Cambio de formato;Planificada;555;550
+2025-03-28;Mañana;PR-01;530;480;0;Sin parada;;4197;4156
+2025-03-28;Tarde;PR-01;530;480;53;Avería;No planificada;3734;3693
+2025-03-28;Noche;PR-01;530;480;0;Sin parada;;4197;4162
+2025-03-28;Mañana;PR-02;360;480;24;Cambio de formato;Planificada;2708;2688
+2025-03-28;Tarde;PR-02;360;480;0;Sin parada;;2851;2818
+2025-03-28;Noche;PR-02;360;480;55;Cambio de formato;Planificada;2524;2488
+2025-03-28;Mañana;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-28;Tarde;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-28;Noche;PR-03;580;480;480;Avería;No planificada;0;0
+2025-03-28;Mañana;SL-01;40;480;56;Cambio de formato;Planificada;279;274
+2025-03-28;Tarde;SL-01;40;480;95;Avería;No planificada;254;249
+2025-03-28;Noche;SL-01;40;480;27;Cambio de formato;Planificada;298;293
+2025-03-28;Mañana;SL-02;80;480;0;Sin parada;;633;629
+2025-03-28;Tarde;SL-02;80;480;42;Cambio de formato;Planificada;578;572
+2025-03-28;Noche;SL-02;80;480;0;Sin parada;;633;630
+2025-03-31;Mañana;PR-01;530;480;43;Cambio de formato;Planificada;3323;3282
+2025-03-31;Tarde;PR-01;530;480;55;Cambio de formato;Planificada;3116;3087
+2025-03-31;Noche;PR-01;530;480;0;Sin parada;;3523;3481
+2025-03-31;Mañana;PR-02;360;480;56;Cambio de formato;Planificada;2078;2056
+2025-03-31;Tarde;PR-02;360;480;84;Falta de material;No planificada;1798;1770
+2025-03-31;Noche;PR-02;360;480;29;Cambio de formato;Planificada;2112;2092
+2025-03-31;Mañana;PR-03;580;480;191;Avería;No planificada;2494;2465
+2025-03-31;Tarde;PR-03;580;480;262;Avería;No planificada;1802;1787
+2025-03-31;Noche;PR-03;580;480;252;Avería;No planificada;1891;1858
+2025-03-31;Mañana;SL-01;40;480;87;Falta de material;No planificada;184;182
+2025-03-31;Tarde;SL-01;40;480;0;Sin parada;;215;213
+2025-03-31;Noche;SL-01;40;480;45;Falta de material;No planificada;195;194
+2025-03-31;Mañana;SL-02;80;480;51;Cambio de formato;Planificada;566;562
+2025-03-31;Tarde;SL-02;80;480;34;Cambio de formato;Planificada;588;582
+2025-03-31;Noche;SL-02;80;480;125;Avería;No planificada;447;441

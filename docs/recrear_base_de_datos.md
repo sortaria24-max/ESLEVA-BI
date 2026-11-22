@@ -11,8 +11,6 @@ La base de datos se reconstruye íntegramente con dos scripts SQL incluidos en e
 
 Los scripts deben ejecutarse **en este orden**: si se ejecuta primero el de carga, fallará porque las tablas aún no existen. El script de creación elimina antes las tablas si ya existen, de modo que puede volver a ejecutarse para empezar de cero sin borrar la base de datos.
 
-> Los scripts SQL se publicarán en `datos/sql/` junto con el generador de datos. Hasta entonces, esta guía describe el procedimiento que se seguirá con ellos.
-
 Elige **una** de las tres opciones siguientes. La opción A es la más sencilla si nunca has usado PostgreSQL.
 
 Todos los comandos de terminal de esta guía deben ejecutarse **desde la carpeta raíz del repositorio** (la carpeta `ESLEVA-BI` que contiene `datos/`), porque las rutas de los scripts son relativas a ella.
@@ -150,7 +148,16 @@ Compara el resultado con los recuentos de referencia:
 
 | Tabla | Filas esperadas |
 |---|---|
-| *Pendiente: se completará al generar los datos.* | |
+| `clientes` | 12 |
+| `compras` | 510 |
+| `familias` | 5 |
+| `lineas_pedido` | 13.728 |
+| `maquinas` | 5 |
+| `materias_primas` | 5 |
+| `ordenes_fabricacion` | 10.655 |
+| `pedidos_venta` | 1.751 |
+| `productos` | 132 |
+| `proveedores` | 5 |
 
 ---
 
