@@ -795,6 +795,39 @@ def exportar_sql(tablas: dict[str, pd.DataFrame]) -> None:
         cuerpo.append(inserts(nombre, df))
     cuerpo.append("\nCOMMIT;\n")
     (DIR_SQL / "02_cargar_datos.sql").write_text("\n".join(cuerpo), encoding="utf-8")
+    exportar_sql_por_partes(tablas)
+
+
+def exportar_sql_por_partes(tablas: dict[str, pd.DataFrame], max_bytes: int = 250_000) -> None:
+    """Divide la carga en ficheros pequeños que pueden pegarse en el SQL Editor de Supabase.
+
+    Cada parte es una transacción independiente y las partes respetan el orden de las
+    claves foráneas, por lo que deben ejecutarse en orden numérico.
+    """
+    dir_partes = DIR_SQL / "carga_por_partes"
+    dir_partes.mkdir(parents=True, exist_ok=True)
+    for viejo in dir_partes.glob("parte_*.sql"):
+        viejo.unlink()
+    sentencias = []
+    for nombre, df in tablas.items():
+        sentencias.extend(s for s in inserts(nombre, df, lote=500).split("\nINSERT INTO ")[1:])
+    partes, actual, tam = [], [], 0
+    for s in sentencias:
+        s = "INSERT INTO " + s
+        if actual and tam + len(s.encode()) > max_bytes:
+            partes.append(actual)
+            actual, tam = [], 0
+        actual.append(s)
+        tam += len(s.encode())
+    partes.append(actual)
+    total = len(partes)
+    for i, contenido in enumerate(partes, start=1):
+        tablas_parte = sorted({c.split(" ", 3)[2] for c in contenido}, key=list(tablas).index)
+        cabecera = (f"-- ERP de ESLEVA - Carga de datos, parte {i} de {total}\n"
+                    f"-- Tablas: {', '.join(tablas_parte)}\n"
+                    "-- Ejecutar en orden, después de 01_crear_tablas.sql\n")
+        texto = cabecera + "BEGIN;\n" + "\n".join(contenido) + "\nCOMMIT;\n"
+        (dir_partes / f"parte_{i:02d}_de_{total:02d}.sql").write_text(texto, encoding="utf-8")
 
 
 # ---------------------------------------------------------------------------

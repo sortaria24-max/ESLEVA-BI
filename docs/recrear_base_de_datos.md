@@ -7,7 +7,7 @@ La base de datos se reconstruye íntegramente con dos scripts SQL incluidos en e
 | Orden | Script | Qué hace |
 |---|---|---|
 | 1 | `datos/sql/01_crear_tablas.sql` | Crea las tablas, sus claves primarias y sus relaciones (claves foráneas). |
-| 2 | `datos/sql/02_cargar_datos.sql` | Inserta todos los datos del periodo enero de 2024 a octubre de 2026. |
+| 2 | `datos/sql/02_cargar_datos.sql` | Inserta todos los datos del periodo enero de 2024 a octubre de 2026. La carpeta `datos/sql/carga_por_partes/` contiene la misma carga dividida en 7 ficheros, para editores web como el de Supabase. |
 
 Los scripts deben ejecutarse **en este orden**: si se ejecuta primero el de carga, fallará porque las tablas aún no existen. El script de creación elimina antes las tablas si ya existen, de modo que puede volver a ejecutarse para empezar de cero sin borrar la base de datos.
 
@@ -78,9 +78,9 @@ Datos de conexión resultantes:
 2. Elige un nombre (por ejemplo, `esleva`), una contraseña para la base de datos (anótala) y la región más cercana (por ejemplo, *West EU*). Espera a que el proyecto termine de crearse.
 3. En el menú lateral, abre el **SQL Editor**.
 4. Pulsa **New query**, pega el contenido de `datos/sql/01_crear_tablas.sql` y pulsa **Run**.
-5. Para la carga de datos, el script `02_cargar_datos.sql` puede ser demasiado grande para el editor web. Es más fiable ejecutarlo con `psql` desde tu ordenador (necesitas tener PostgreSQL instalado, opción A.1):
-   - En Supabase, pulsa **Connect** (parte superior) y, en la sección **Session pooler**, consulta el servidor (`host`) y el usuario (`user`) de tu proyecto.
-   - Desde la carpeta raíz del repositorio, ejecuta el comando sustituyendo el servidor y el usuario por los tuyos. `psql` te pedirá la contraseña al ejecutarlo; así no queda escrita en el historial del terminal y no da problemas si contiene caracteres especiales:
+5. Para la carga de datos, el script `02_cargar_datos.sql` es demasiado grande para el editor web. Tienes dos alternativas:
+   - **Sin instalar nada:** la carpeta `datos/sql/carga_por_partes/` contiene la misma carga dividida en 7 ficheros (`parte_01_de_07.sql` … `parte_07_de_07.sql`). Abre cada uno en GitHub con el botón **Raw**, copia todo su contenido, pégalo en una consulta nueva del **SQL Editor** y pulsa **Run**. Ejecútalos **en orden numérico**, porque las primeras partes cargan las tablas de las que dependen las siguientes. Si una parte falla, no se carga nada de ella: corrige el problema y vuelve a ejecutar esa misma parte.
+   - **Con `psql`** (necesitas tener PostgreSQL instalado, opción A.1): en Supabase, pulsa **Connect** (parte superior) y, en la sección **Session pooler**, consulta el servidor (`host`) y el usuario (`user`) de tu proyecto. Desde la carpeta raíz del repositorio, ejecuta el comando sustituyendo el servidor y el usuario por los tuyos. `psql` te pedirá la contraseña al ejecutarlo; así no queda escrita en el historial del terminal y no da problemas si contiene caracteres especiales:
 
    ```bash
    psql -h aws-0-<region>.pooler.supabase.com -p 5432 -U postgres.<ref> -d postgres -f datos/sql/02_cargar_datos.sql
