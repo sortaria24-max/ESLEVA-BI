@@ -89,19 +89,22 @@ Datos de conexión resultantes:
 6. *(Opcional)* Si quieres dar acceso a otra persona sin compartir tu contraseña de administrador, crea un usuario de solo lectura. En el **SQL Editor**, sustituye `<contraseña>` por una contraseña nueva y ejecuta:
 
    ```sql
-   CREATE ROLE lector_esleva WITH LOGIN PASSWORD '<contraseña>';
-   GRANT USAGE ON SCHEMA public TO lector_esleva;
-   GRANT SELECT ON ALL TABLES IN SCHEMA public TO lector_esleva;
    DO $$
    DECLARE t text;
    BEGIN
+     IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'lector_esleva') THEN
+       CREATE ROLE lector_esleva WITH LOGIN PASSWORD '<contraseña>';
+     END IF;
+     GRANT USAGE ON SCHEMA public TO lector_esleva;
+     GRANT SELECT ON ALL TABLES IN SCHEMA public TO lector_esleva;
      FOR t IN SELECT tablename FROM pg_tables WHERE schemaname = 'public' LOOP
+       EXECUTE format('DROP POLICY IF EXISTS lectura_lector_esleva ON public.%I', t);
        EXECUTE format('CREATE POLICY lectura_lector_esleva ON public.%I FOR SELECT TO lector_esleva USING (true)', t);
      END LOOP;
    END $$;
    ```
 
-   El último bloque es necesario si al crear las tablas elegiste **Run and enable RLS** (seguridad a nivel de fila): sin una política, el usuario vería las tablas vacías. Su usuario de conexión en el *Session pooler* es `lector_esleva.<ref>`. Si más adelante vuelves a ejecutar `01_crear_tablas.sql`, los permisos y las políticas se eliminan con las tablas: ejecuta de nuevo el bloque sin la primera línea (`CREATE ROLE`), porque el usuario ya existe.
+   El último bloque es necesario si al crear las tablas elegiste **Run and enable RLS** (seguridad a nivel de fila): sin una política, el usuario vería las tablas vacías. Su usuario de conexión en el *Session pooler* es `lector_esleva.<ref>`. El bloque puede ejecutarse varias veces sin error: si el usuario ya existe, no lo vuelve a crear (ni cambia su contraseña) y solo asegura los permisos y las políticas. Ejecútalo de nuevo siempre que vuelvas a ejecutar `01_crear_tablas.sql`, porque los permisos y las políticas se eliminan junto con las tablas.
 
 Usa siempre los datos del **Session pooler**: la conexión directa de Supabase solo funciona con IPv6 y muchas redes domésticas no la admiten.
 
