@@ -49,6 +49,18 @@ En Power BI Desktop: **Obtener datos > Base de datos PostgreSQL**, servidor `aws
 
 Este usuario solo puede leer las tablas, no modificarlas. El plan gratuito de Supabase pausa los proyectos tras un periodo de inactividad; si la conexión falla por ese motivo, puede solicitarse su reactivación o recrear la base de datos en local.
 
+### Acceso a la API del portal de clientes
+
+La tabla `previsiones_cliente` (portal de previsiones de los clientes) se consulta además mediante la API REST de Supabase, autenticada con una API key pública de solo lectura que únicamente da acceso a esa tabla:
+
+| Parámetro | Valor |
+|---|---|
+| URL | `https://fcpxbuhuzvqyjrlwejgv.supabase.co/rest/v1/previsiones_cliente?select=*` |
+| Cabecera HTTP | `apikey` |
+| API key | `sb_publishable__lnwpTKY7h5Xeg6micoG_w_cO-Aaig4` |
+
+En Power BI Desktop: **Obtener datos > Web > Avanzado**, pega la URL y, en **Parámetros de encabezado de solicitud HTTP**, añade `apikey` con la clave anterior. En la ventana de credenciales, elige **Anónimo**. La respuesta es una lista JSON que se convierte en tabla con **A la tabla** y se expande con el botón de la cabecera de columna.
+
 Si no fuera posible acceder a la base de datos en la nube, puede recrearse en cualquier instancia de PostgreSQL siguiendo la guía paso a paso [Cómo recrear la base de datos](docs/recrear_base_de_datos.md).
 
 ## Regenerar los datos
