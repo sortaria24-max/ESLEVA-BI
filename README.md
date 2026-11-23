@@ -29,6 +29,7 @@ ESLEVA-BI/
 | Calidad | Excel | `datos/excel/calidad_ESLEVA.xlsx` | Inspecciones y reclamaciones de cliente |
 | Presupuesto | Excel | `datos/excel/presupuesto_ESLEVA.xlsx` | Presupuesto mensual por familia de producto |
 | MES | CSV | `datos/mes/mes_AAAA_MM.csv` | Producción y paradas por máquina y turno |
+| Portal de clientes | API REST (Supabase) | `datos/sql/03_api_previsiones.sql` | Previsiones semanales de demanda de cada cliente por familia |
 
 Periodo de los datos: enero de 2024 a octubre de 2026.
 
