@@ -10,6 +10,7 @@ La base de datos se reconstruye íntegramente con dos scripts SQL incluidos en e
 |---|---|---|
 | 1 | `datos/sql/01_crear_tablas.sql` | Crea las tablas, sus claves primarias y sus relaciones (claves foráneas). |
 | 2 | `datos/sql/02_cargar_datos.sql` | Inserta todos los datos del periodo enero de 2024 a octubre de 2026. La carpeta `datos/sql/carga_por_partes/` contiene la misma carga dividida en 7 ficheros, para editores web como el de Supabase. |
+| 3 | `datos/sql/03_api_previsiones.sql` | Crea y carga la tabla `previsiones_cliente`, que simula el portal de previsiones de los clientes y se consulta mediante la API REST de Supabase. |
 
 Los scripts deben ejecutarse **en este orden**: si se ejecuta primero el de carga, fallará porque las tablas aún no existen. El script de creación elimina antes las tablas si ya existen, de modo que puede volver a ejecutarse para empezar de cero sin borrar la base de datos.
 

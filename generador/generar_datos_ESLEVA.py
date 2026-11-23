@@ -628,6 +628,77 @@ def crear_presupuesto(lineas: pd.DataFrame, pedidos: pd.DataFrame, productos: pd
 
 
 # ---------------------------------------------------------------------------
+# 7 bis. Portal de previsiones de los clientes (fuente API)
+# ---------------------------------------------------------------------------
+# Los clientes publican cada lunes en su portal de proveedores la previsión de
+# demanda para la semana que comienza cuatro semanas después. ESLEVA la consulta
+# a través de una API REST. Se usa un generador aleatorio propio para que añadir
+# esta fuente no altere el resto de los datos.
+
+HORIZONTE_SEMANAS = 4
+SESGO_CLIENTE = {3: 1.18}        # cliente que sobreestima de forma sistemática su demanda
+
+
+def crear_previsiones(lineas: pd.DataFrame, pedidos: pd.DataFrame, productos: pd.DataFrame,
+                      clientes: pd.DataFrame) -> pd.DataFrame:
+    r = np.random.default_rng(SEMILLA + 1)
+    v = lineas.merge(pedidos, on="id_pedido").merge(productos[["id_producto", "id_familia"]], on="id_producto")
+    v = v[v["estado"] != "Anulado"].copy()
+    fs = pd.to_datetime(v["fecha_solicitada"])
+    v["semana"] = (fs - pd.to_timedelta(fs.dt.weekday, unit="D")).dt.date
+    real = v.groupby(["id_cliente", "id_familia", "semana"])["cantidad"].sum()
+    pares = real.reset_index()[["id_cliente", "id_familia"]].drop_duplicates()
+    lunes = list(pd.date_range(FECHA_INICIO, FECHA_FIN + dt.timedelta(days=7 * HORIZONTE_SEMANAS),
+                               freq="W-MON").date)
+    peso = dict(zip(clientes["id_cliente"], PESO_CLIENTES))
+    filas, idp = [], 1
+    for _, par in pares.sort_values(["id_cliente", "id_familia"]).iterrows():
+        idc, idf = int(par["id_cliente"]), int(par["id_familia"])
+        serie = real.loc[(idc, idf)]
+        sesgo = SESGO_CLIENTE.get(idc, 1 + r.uniform(-0.04, 0.04))
+        ruido = 0.08 if peso[idc] >= 0.10 else 0.15        # los clientes pequeños prevén peor
+        for semana in lunes:
+            emision = semana - dt.timedelta(days=7 * HORIZONTE_SEMANAS)
+            if emision < FECHA_INICIO or emision > FECHA_FIN:
+                continue
+            if semana <= FECHA_FIN:
+                base = float(serie.get(semana, 0))
+            else:                                          # semanas futuras: media reciente
+                base = float(serie[serie.index > FECHA_FIN - dt.timedelta(days=56)].sum()) / 8
+            if base == 0 and r.random() < 0.9:
+                continue
+            if base == 0:                                  # previsión sin pedido posterior
+                base = float(serie.mean())
+            cantidad = int(max(0, round(base * sesgo * r.normal(1.0, ruido) / 50) * 50))
+            filas.append({"id_prevision": idp, "fecha_emision": emision, "semana_entrega": semana,
+                          "id_cliente": idc, "id_familia": idf, "cantidad_prevista": cantidad})
+            idp += 1
+    return pd.DataFrame(filas)
+
+
+ESQUEMA_PREVISIONES = """-- ============================================================================
+-- Portal de previsiones de los clientes - Tabla expuesta mediante API REST
+-- Generado automáticamente por generador/generar_datos_ESLEVA.py
+-- Ejecutar después de 01_crear_tablas.sql y 02_cargar_datos.sql.
+-- Puede ejecutarse varias veces: elimina antes la tabla si ya existe.
+-- ============================================================================
+
+BEGIN;
+
+DROP TABLE IF EXISTS previsiones_cliente;
+
+CREATE TABLE previsiones_cliente (
+    id_prevision      INTEGER PRIMARY KEY,
+    fecha_emision     DATE    NOT NULL,
+    semana_entrega    DATE    NOT NULL,
+    id_cliente        INTEGER NOT NULL REFERENCES clientes(id_cliente),
+    id_familia        INTEGER NOT NULL REFERENCES familias(id_familia),
+    cantidad_prevista INTEGER NOT NULL
+);
+"""
+
+
+# ---------------------------------------------------------------------------
 # 8. Exportación: Excel y SQL
 # ---------------------------------------------------------------------------
 
@@ -872,12 +943,18 @@ def main() -> None:
               "ordenes_fabricacion": ordenes, "compras": compras}
     exportar_sql(tablas)
 
+    print("Generando previsiones del portal de clientes (API)...")
+    previsiones = crear_previsiones(lineas, pedidos, productos, clientes)
+    (DIR_SQL / "03_api_previsiones.sql").write_text(
+        ESQUEMA_PREVISIONES + inserts("previsiones_cliente", previsiones) + "\n\nCOMMIT;\n", encoding="utf-8")
+
     print("\nResumen de filas generadas:")
     for nombre, df in tablas.items():
         print(f"  {nombre:<22}{len(df):>8}")
     print(f"  {'MES (registros)':<22}{len(mes):>8}")
     print(f"  {'inspecciones':<22}{len(inspecciones):>8}")
     print(f"  {'reclamaciones':<22}{len(reclamaciones):>8}")
+    print(f"  {'previsiones_cliente':<22}{len(previsiones):>8}")
 
 
 if __name__ == "__main__":
